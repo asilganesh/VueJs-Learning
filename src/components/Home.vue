@@ -17,7 +17,7 @@ export default {
    },
    methods:{
     getName:function(){
-        return "Ganesh asil"
+        return "Ganesh Asil" 
     },
     getData:function(){
         return{
