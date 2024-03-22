@@ -1,38 +1,36 @@
 <template>
-
-<h1>Email: {{ getData().email }}</h1>
-<h1>name: {{ getName() }}</h1>
-<h1>Name : {{ getData().lastname }}</h1>
+    <h1 v-on:mousemove="move()">Home Component</h1>
+    <button v-on:click="getData('button 1 clicked')">Click Me</button>
+    <button v-on:dblclick="getData('button double  clicked')">Click me</button>
+    <button v-on:click="increment()">click to Increment count {{ count }}</button>
+    
 </template>
 
 <script>
-
 export default {
     name:"HomeComponent",
-   data(){
-    return{
-        email:"ganesh@gmail.com",
-      
-    }
-   },
-   methods:{
-    getName:function(){
-        return "Ganesh Asil" 
-    },
-    getData:function(){
+    data(){
         return{
-            fname:"Ganesh",
-            lastname:"Asil",
-            email:this.email
+            count:0
+        }
+    },
+    methods:{
+        getData:function(data){
+            alert(data)
+        },
+        move:function(){
+            console.log("mouse moved")
+        },
+        increment:function(){
+            this.count=this.count+1
         }
     }
-   }
+ 
 }
 </script>
 
 <style scoped>
 h1{
-    color:red
+    color:orange
 }
-
 </style>
