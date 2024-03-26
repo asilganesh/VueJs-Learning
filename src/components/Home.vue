@@ -1,8 +1,11 @@
 <template>
-    <h1 v-on:mousemove="move()">Home Component</h1>
-    <button v-on:click="getData('button 1 clicked')">Click Me</button>
-    <button v-on:dblclick="getData('button double  clicked')">Click me</button>
-    <button v-on:click="increment()">click to Increment count {{ count }}</button>
+    <input type="mail" placeholder="enter you email" v-model="email">
+    <br>
+    <br>
+    <input type="password" placeholder="enter your password" v-model="password">
+    <br>
+    <br>
+    <button  v-on:click="getData()" type="button">Get Values</button>
     
 </template>
 
@@ -11,18 +14,14 @@ export default {
     name:"HomeComponent",
     data(){
         return{
-            count:0
+            email:null,
+            password:null
+           
         }
     },
     methods:{
-        getData:function(data){
-            alert(data)
-        },
-        move:function(){
-            console.log("mouse moved")
-        },
-        increment:function(){
-            this.count=this.count+1
+        getData:function(){
+            console.log("values ",this.email,this.password)
         }
     }
  
