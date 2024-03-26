@@ -1,11 +1,10 @@
 <template>
-    <input type="mail" placeholder="enter you email" v-model="email">
+    
+    <h2 v-if="show">If condition</h2>
+    <h2 v-else>Else condition</h2>
     <br>
     <br>
-    <input type="password" placeholder="enter your password" v-model="password">
-    <br>
-    <br>
-    <button  v-on:click="getData()" type="button">Get Values</button>
+    <button v-on:click="show=!show">show</button>
     
 </template>
 
@@ -14,8 +13,7 @@ export default {
     name:"HomeComponent",
     data(){
         return{
-            email:null,
-            password:null
+         show:true
            
         }
     },
